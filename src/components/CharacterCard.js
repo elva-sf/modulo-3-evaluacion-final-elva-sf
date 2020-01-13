@@ -1,6 +1,7 @@
 import React from "react";
 
-function CharacterCard() {
+function CharacterCard(props) {
+  console.log(props.character);
   return (
     <div className="CharacterCard">
       <div
@@ -10,9 +11,9 @@ function CharacterCard() {
         }} */
       >
         <div className="card-body">
-          <img src="" alt="" />
-          <div className="card-header">Personaje</div>
-          <p className="card-text">Some quick example text.</p>
+          <img src={props.character.image} alt="" />
+          <div className="card-header">{props.character.name}</div>
+          <p className="card-text">{props.character.species}</p>
         </div>
       </div>
     </div>

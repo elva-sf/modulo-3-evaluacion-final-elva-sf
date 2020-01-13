@@ -29,8 +29,16 @@ class App extends React.Component {
       <div className="App">
         <Header />
         <Filters />
-        <CharacterList />
-        <CharacterDetail />
+        <CharacterList characters={this.state.characters} />
+        {/* <ul>
+          {this.state.characters.map(character => {
+            return (
+              <li key={character.id}>
+                <CharacterDetail key={character.id} character={character} />
+              </li>
+            );
+          })}
+        </ul> */}
       </div>
     );
   }
