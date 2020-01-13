@@ -6,7 +6,7 @@ function Filters(props) {
     props.handleSearch(ev.target.value);
   }
   return (
-    <form>
+    <form className="filterForm">
       <label className="col-form-label">¿A quién buscas?</label>
       <input
         type="text"

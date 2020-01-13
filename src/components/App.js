@@ -7,6 +7,7 @@ import Filters from "./Filters";
 import CharacterList from "./CharacterList";
 import CharacterDetail from "./CharacterDetail";
 import { Switch, Route } from "react-router-dom";
+import PropTypes from "prop-types";
 
 class App extends React.Component {
   constructor(props) {
@@ -71,3 +72,7 @@ class App extends React.Component {
 }
 
 export default App;
+
+CharacterDetail.propTypes = {
+  "match.params.id": PropTypes.number
+};

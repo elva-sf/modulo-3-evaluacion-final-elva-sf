@@ -7,22 +7,23 @@ function CharacterDetail(props) {
 
   return (
     <React.Fragment>
-      <div className="CharacterCard">
+      <div className="CharacterDetail">
         <div className="card text-white bg-danger mb-3">
           <div className="card-body">
             <img src={image} alt="" />
             <h3 className="card-title">{name}</h3>
             {status === "Alive" ? (
-              <span role="img">💟</span>
+              <i className="fas fa-heartbeat"></i>
             ) : status === "Dead" ? (
-              <span role="img">☠</span>
+              <i className="fas fa-skull"></i>
             ) : (
-              status === <span role="img">❔</span>
+              status === <i className="far fa-question-circle"></i>
             )}
+            <span> / </span>
             {species === "Human" ? (
-              <span role="img">👫</span>
+              <i className="fas fa-male"></i>
             ) : (
-              <span role="img">👾</span>
+              <i className="fab fa-reddit-alien"></i>
             )}
           </div>
           <p className="card-text">Species: {species}</p>
@@ -32,7 +33,9 @@ function CharacterDetail(props) {
         </div>
       </div>
       <Link to="/">
-        <aside>*Volver al listado</aside>
+        <button type="button" className="btn btn-outline-info">
+          <i className="far fa-hand-point-left"></i> Volver al listado
+        </button>
       </Link>
     </React.Fragment>
   );

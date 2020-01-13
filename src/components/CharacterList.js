@@ -4,17 +4,11 @@ import PropTypes from "prop-types";
 
 function CharacterList(props) {
   return (
-    <div
-      className="CharacterList"
-      style={{
-        width: `${50}rem`,
-        display: "flex"
-      }}
-    >
-      <ul>
+    <div className="CharacterList">
+      <ul className="CharacterList-ul">
         {props.characters.map(character => {
           return (
-            <li key={character.id}>
+            <li key={character.id} className="liElement">
               <CharacterCard key={character.id} character={character} />
             </li>
           );

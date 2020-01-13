@@ -6,7 +6,7 @@ function CharacterCard(props) {
   const { id, image, name, species } = props.character;
   const route = `/character/${id}`;
   return (
-    <Link to={route}>
+    <Link to={route} className="linkElement">
       <div className="CharacterCard">
         <div className="card text-white bg-danger mb-3">
           <div className="card-body">

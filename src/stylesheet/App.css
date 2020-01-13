@@ -1,38 +1,68 @@
 .App {
   text-align: center;
+  background-color: greenyellow;
+}
+.Header {
+  background-color: white;
+}
+.filterForm {
+  text-align: center;
+  width: 50%;
+  margin: auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.form-control {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 50%;
+  margin-bottom: 40px;
+}
+
+.CharacterList {
+  display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.card {
+  margin: 0 10px;
+}
+.CharacterList-ul {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 30px;
 }
 
-.App-link {
-  color: #61dafb;
+.CharacterDetail {
+  background-color: yellow;
+  margin: auto 20px;
+  border-top: yellow solid 20px;
+  border-left: yellow solid 200px;
+  border-right: yellow solid 200px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Link */
+.liElement {
+  list-style-type: none;
+  margin-bottom: 20px;
+}
+
+.linkElement {
+  text-decoration: none;
+}
+
+/* Icons */
+.fa-heartbeat {
+  color: pink;
+}
+.fa-skull {
+  color: black;
+}
+.fa-male {
+  color: cornflowerblue;
+}
+.fa-reddit-alien {
+  color: purple;
 }
