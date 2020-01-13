@@ -3,7 +3,13 @@ import CharacterCard from "./CharacterCard";
 
 function CharacterList(props) {
   return (
-    <div className="CharacterList">
+    <div
+      className="CharacterList"
+      style={{
+        width: `${50}rem`,
+        display: "flex"
+      }}
+    >
       <ul>
         {props.characters.map(character => {
           return (

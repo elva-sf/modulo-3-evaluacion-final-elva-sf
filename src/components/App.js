@@ -12,9 +12,11 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      search: "",
       characters: []
     };
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
+    this.handleSearch = this.handleSearch.bind(this);
   }
 
   componentDidMount() {
@@ -34,14 +36,31 @@ class App extends React.Component {
     }
   }
 
+  // event
+  handleSearch(data) {
+    console.log(data);
+    this.setState({
+      search: data
+    });
+  }
+
+  //helper
+
   render() {
+    console.log(this.state.search);
+    const filteredCharacters = this.state.characters.filter(character => {
+      return character.name
+        .toLowerCase()
+        .includes(this.state.search.toLowerCase());
+    });
+
     return (
       <div className="App">
         <Switch>
           <Route exact path="/">
             <Header />
-            <Filters />
-            <CharacterList characters={this.state.characters} />
+            <Filters handleSearch={this.handleSearch} />
+            <CharacterList characters={filteredCharacters} />
           </Route>
           <Route path="/character/:id" render={this.renderCharacterDetail} />
         </Switch>
