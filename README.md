@@ -5,4 +5,5 @@
 [x] - Crear Router.
 [x] - Pintar el Listado de Personajes con datos reales.
 [x] - Pintar el Detalle de cada Personaje con datos reales.
-[] - Filtrar Personajes por nombre.
+[x] - Filtrar Personajes por nombre.
+[x] - BONUS: Mejoras visuales.
