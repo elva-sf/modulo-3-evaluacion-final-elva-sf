@@ -1,11 +1,12 @@
 import React from "react";
 import getDataFromApi from "../services/getDataFromApi";
 import "../stylesheet/App.css";
-import CharacterList from "./CharacterList";
-import Filters from "./Filters";
-import CharacterDetail from "./CharacterDetail";
 import "../stylesheet/bootstrap.min.css";
 import Header from "./Header";
+import Filters from "./Filters";
+import CharacterList from "./CharacterList";
+import CharacterDetail from "./CharacterDetail";
+import { Switch, Route } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -13,6 +14,7 @@ class App extends React.Component {
     this.state = {
       characters: []
     };
+    this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
   }
 
   componentDidMount() {
@@ -22,23 +24,27 @@ class App extends React.Component {
       });
     });
   }
+  renderCharacterDetail(props) {
+    const routeId = parseInt(props.match.params.id);
+    const character = this.state.characters.find(item => item.id === routeId);
+    if (character === undefined) {
+      return <p>Personaje no encontrado</p>;
+    } else {
+      return <CharacterDetail character={character} />;
+    }
+  }
 
   render() {
-    console.log(this.state);
     return (
       <div className="App">
-        <Header />
-        <Filters />
-        <CharacterList characters={this.state.characters} />
-        {/* <ul>
-          {this.state.characters.map(character => {
-            return (
-              <li key={character.id}>
-                <CharacterDetail key={character.id} character={character} />
-              </li>
-            );
-          })}
-        </ul> */}
+        <Switch>
+          <Route exact path="/">
+            <Header />
+            <Filters />
+            <CharacterList characters={this.state.characters} />
+          </Route>
+          <Route path="/character/:id" render={this.renderCharacterDetail} />
+        </Switch>
       </div>
     );
   }
