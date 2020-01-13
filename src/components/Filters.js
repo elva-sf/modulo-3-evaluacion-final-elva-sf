@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 function Filters(props) {
   function handleSearch(ev) {
@@ -17,8 +18,7 @@ function Filters(props) {
   );
 }
 export default Filters;
-/*   console.log(props);
-  const newCharacters = props.filteredCharacters;
-  newCharacters.filter(character =>
-    character.name.toLowerCase().includes(props.search.toLowerCase())
-  ); */
+
+Filters.propTypes = {
+  handleSearch: PropTypes.func
+};

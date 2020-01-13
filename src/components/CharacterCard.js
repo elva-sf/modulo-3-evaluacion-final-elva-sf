@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
 function CharacterCard(props) {
   const { id, image, name, species } = props.character;
@@ -7,12 +8,7 @@ function CharacterCard(props) {
   return (
     <Link to={route}>
       <div className="CharacterCard">
-        <div
-          className="card text-white bg-danger mb-3"
-          /* style={{
-          max_width: `${20}rem`
-        }} */
-        >
+        <div className="card text-white bg-danger mb-3">
           <div className="card-body">
             <img src={image} alt="" />
             <div className="card-header">{name}</div>
@@ -24,3 +20,10 @@ function CharacterCard(props) {
   );
 }
 export default CharacterCard;
+
+CharacterCard.propTypes = {
+  id: PropTypes.number,
+  image: PropTypes.string,
+  name: PropTypes.string,
+  species: PropTypes.string
+};

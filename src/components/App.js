@@ -26,6 +26,24 @@ class App extends React.Component {
       });
     });
   }
+
+  // event
+  handleSearch(data) {
+    this.setState({
+      search: data
+    });
+  }
+
+  // helper
+  filterCharactersBySearch() {
+    return this.state.characters.filter(character => {
+      return character.name
+        .toLowerCase()
+        .includes(this.state.search.toLowerCase());
+    });
+  }
+
+  // render
   renderCharacterDetail(props) {
     const routeId = parseInt(props.match.params.id);
     const character = this.state.characters.find(item => item.id === routeId);
@@ -36,31 +54,14 @@ class App extends React.Component {
     }
   }
 
-  // event
-  handleSearch(data) {
-    console.log(data);
-    this.setState({
-      search: data
-    });
-  }
-
-  //helper
-
   render() {
-    console.log(this.state.search);
-    const filteredCharacters = this.state.characters.filter(character => {
-      return character.name
-        .toLowerCase()
-        .includes(this.state.search.toLowerCase());
-    });
-
     return (
       <div className="App">
         <Switch>
           <Route exact path="/">
             <Header />
             <Filters handleSearch={this.handleSearch} />
-            <CharacterList characters={filteredCharacters} />
+            <CharacterList characters={this.filterCharactersBySearch()} />
           </Route>
           <Route path="/character/:id" render={this.renderCharacterDetail} />
         </Switch>
