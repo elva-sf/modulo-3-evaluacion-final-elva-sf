@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function CharacterDetail(props) {
+  console.log(props.character.status);
+
   const { image, name, species, origin, episode, status } = props.character;
 
   return (
@@ -16,8 +18,10 @@ function CharacterDetail(props) {
               <i className="fas fa-heartbeat"></i>
             ) : status === "Dead" ? (
               <i className="fas fa-skull"></i>
+            ) : status === "unknown" ? (
+              <i className="fas fa-question-circle"></i>
             ) : (
-              status === <i className="far fa-question-circle"></i>
+              false
             )}
             <span> / </span>
             {species === "Human" ? (
