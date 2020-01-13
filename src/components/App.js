@@ -1,8 +1,23 @@
 import React from "react";
 import "../stylesheet/App.css";
+import CharacterList from "./CharacterList";
+import Filters from "./Filters";
+import CharacterDetail from "./CharacterDetail";
 
-function App() {
-  return <div className="App">Hola</div>;
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Filters />
+        <CharacterList />
+        <CharacterDetail />
+      </div>
+    );
+  }
 }
 
 export default App;
