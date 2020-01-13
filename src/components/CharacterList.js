@@ -4,7 +4,11 @@ import CharacterCard from "./CharacterCard";
 function CharacterList() {
   return (
     <div className="CharacterList">
-      <CharacterCard />
+      <ul>
+        <li>
+          <CharacterCard />
+        </li>
+      </ul>
     </div>
   );
 }
