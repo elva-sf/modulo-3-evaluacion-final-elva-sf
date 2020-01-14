@@ -14,6 +14,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       search: "",
+      species: "All",
       characters: []
     };
     this.renderCharacterDetail = this.renderCharacterDetail.bind(this);
@@ -30,18 +31,24 @@ class App extends React.Component {
 
   // event
   handleSearch(data) {
-    this.setState({
-      search: data
-    });
+    console.log(data);
+    this.setState(data);
   }
 
   // helper
   filterCharactersBySearch() {
-    return this.state.characters.filter(character => {
-      return character.name
-        .toLowerCase()
-        .includes(this.state.search.toLowerCase());
-    });
+    return this.state.characters
+      .filter(character => {
+        return character.name
+          .toLowerCase()
+          .includes(this.state.search.toLowerCase());
+      })
+      .filter(character => {
+        return (
+          character.species === this.state.species ||
+          "All" === this.state.species
+        );
+      });
   }
 
   // render
@@ -64,6 +71,7 @@ class App extends React.Component {
             <Filters
               handleSearch={this.handleSearch}
               search={this.state.search}
+              species={this.state.species}
             />
             <CharacterList characters={this.filterCharactersBySearch()} />
           </Route>

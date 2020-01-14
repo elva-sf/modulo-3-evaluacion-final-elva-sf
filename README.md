@@ -7,3 +7,4 @@
 [x] - Pintar el Detalle de cada Personaje con datos reales.
 [x] - Filtrar Personajes por nombre.
 [x] - BONUS: Mejoras visuales.
+[x] - BONUS: Filtrar por especies.
