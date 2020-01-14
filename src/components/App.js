@@ -31,7 +31,6 @@ class App extends React.Component {
 
   // event
   handleSearch(data) {
-    console.log(data);
     this.setState(data);
   }
 

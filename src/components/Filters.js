@@ -2,16 +2,20 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Filters(props) {
-  console.log(props);
+  // handle functions
   function handleSearch(ev) {
     props.handleSearch({ search: ev.target.value });
   }
   function handleCheck(ev) {
     props.handleSearch({ species: ev.target.value });
   }
+  function handlePrevent(ev) {
+    ev.preventDefault();
+  }
+  // form
   return (
     <React.Fragment>
-      <form>
+      <form onSubmit={handlePrevent}>
         <div className="filterForm">
           <label className="col-form-label">¿A quién buscas?</label>
           <input
@@ -63,5 +67,6 @@ function Filters(props) {
 export default Filters;
 
 Filters.propTypes = {
-  handleSearch: PropTypes.func
+  handleSearch: PropTypes.func,
+  species: PropTypes.string
 };
