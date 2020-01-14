@@ -6,7 +6,7 @@ function CharacterList(props) {
   return (
     <div className="CharacterList">
       {props.characters.length === 0 ? (
-        <p>Personaje no encontrado 🤷</p>
+        <h1 className="notFoundText">Personaje no encontrado 🤷</h1>
       ) : (
         <ul className="CharacterList-ul">
           {props.characters.map(character => {

@@ -42,7 +42,6 @@ function Filters(props) {
           <input
             type="radio"
             name="species"
-            id=""
             value="Alien"
             onChange={handleCheck}
             checked={props.species === "Alien" ? true : false}
