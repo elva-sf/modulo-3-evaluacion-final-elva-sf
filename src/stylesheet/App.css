@@ -4,13 +4,21 @@
 }
 .Header {
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid;
+}
+.HeaderImg {
+  margin-bottom: 20px;
 }
 .filterForm {
   text-align: center;
   width: 50%;
   margin: auto;
+  margin-top: 20px;
 }
-
 .form-control {
   display: flex;
   flex-direction: column;
@@ -18,7 +26,6 @@
   width: 50%;
   margin-bottom: 40px;
 }
-
 .CharacterList {
   display: flex;
   flex-wrap: wrap;
@@ -34,7 +41,6 @@
   justify-content: center;
   margin: 30px;
 }
-
 .CharacterDetail {
   background-color: yellow;
   margin: auto 20px;
@@ -43,13 +49,21 @@
   border-right: yellow solid 200px;
 }
 
+/* Mediaqueries */
+@media all and (max-width: 550px) {
+  .HeaderImg {
+    width: 300px;
+    margin-bottom: 10px;
+  }
+}
+
 /* Link */
 .liElement {
   list-style-type: none;
   margin-bottom: 20px;
 }
-
-.linkElement {
+.linkElement,
+.linkElement:hover {
   text-decoration: none;
 }
 

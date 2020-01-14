@@ -12,6 +12,7 @@ function Filters(props) {
         type="text"
         className="form-control"
         placeholder="ej. rick"
+        value={props.search}
         onChange={handleSearch}
       />
     </form>

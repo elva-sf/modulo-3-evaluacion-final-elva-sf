@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 function CharacterCard(props) {
   const { id, image, name, species } = props.character;
   const route = `/character/${id}`;
+
   return (
     <Link to={route} className="linkElement">
       <div className="CharacterCard">

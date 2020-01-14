@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 
 function CharacterDetail(props) {
-  console.log(props.character.status);
-
   const { image, name, species, origin, episode, status } = props.character;
 
   return (
